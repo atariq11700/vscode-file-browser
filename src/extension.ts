@@ -245,21 +245,22 @@ class FileBrowser {
                 await (await drivelist.list()).forEach((drive) => {
                     drive.mountpoints.forEach((mount) => {
                         drives.push(mount.path);
-                    })
-                })
+                    });
+                });
 
                 let items = drives.map((drive_path) => {
                     return new FileItem([drive_path, FileType.Directory])
-                })
+                });
 
                 this.items = items;
                 this.current.items = items;
 
                 this.current.enabled = true;
 
+                this.file = None;
                 this.path = new Path(
                     vscode.Uri.file("")
-                )
+                );
 
 
                 // console.log("Drives", drives)
