@@ -69,11 +69,13 @@
                         ".vscodeignore"
                     ]
                 },
-                 "file-browser-fixed.uriSchemeUriCommandMap": {
+                "file-browser-fixed.uriSchemeUriCommandMap": {
                     "markdownDescription": "(advanced) a map of uri schemes to command names. The named command will be invoked when file-browser-fixed is invoked while the active text editor has the given scheme. The command must return the uri of the path where file-browser-fixed should start.",
                     "type": "object",
                     "patternProperties": {
-                        ".*": { "type": "string" }
+                        ".*": {
+                            "type": "string"
+                        }
                     },
                     "default": {
                         "comint": "comint.getCwdUri"
@@ -151,6 +153,7 @@
         "vscode-test": "^1.4.0"
     },
     "dependencies": {
+        "drivelist": "^11.0.0",
         "ignore": "^5.1.8"
     }
 }
