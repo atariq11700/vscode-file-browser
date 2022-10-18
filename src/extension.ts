@@ -2,7 +2,7 @@ import * as vscode from "vscode";
 import { Uri, QuickPickItem, FileType, QuickInputButton, ThemeIcon, ViewColumn } from "vscode";
 import * as OS from "os";
 import * as OSPath from "path";
-import { Drive, Mountpoint, list } from "drivelist";
+import * as drivelist from "drivelist";
 
 import { Result, None, Option, Some } from "./rust";
 import { Path, endsWithPathSeparator } from "./path";
@@ -242,7 +242,7 @@ class FileBrowser {
                 this.current.value = "";
 
                 let drives: string[] = [];
-                await (await list()).forEach((drive) => {
+                await (await drivelist.list()).forEach((drive) => {
                     drive.mountpoints.forEach((mount) => {
                         drives.push(mount.path);
                     })
