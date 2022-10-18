@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { Uri, QuickPickItem, FileType, QuickInputButton, ThemeIcon, ViewColumn } from "vscode";
 import * as OS from "os";
 import * as OSPath from "path";
+import { Drive, Mountpoint, list } from "drivelist";
 
 import { Result, None, Option, Some } from "./rust";
 import { Path, endsWithPathSeparator } from "./path";
@@ -231,6 +232,8 @@ class FileBrowser {
             this.pathHistory[this.path.id] = this.activeItem().map((item) => item.name);
             this.file = this.path.pop();
             await this.update();
+        } else {
+            
         }
     }
 
@@ -425,7 +428,7 @@ export function activate(context: vscode.ExtensionContext) {
     setContext(false);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.open", () => {
+        vscode.commands.registerCommand("file-browser-fixed.open", () => {
             const document = vscode.window.activeTextEditor?.document;
             let workspaceFolder =
                 vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders[0];
@@ -441,27 +444,27 @@ export function activate(context: vscode.ExtensionContext) {
     );
 
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.stepIn", () =>
+        vscode.commands.registerCommand("file-browser-fixed.stepIn", () =>
             active.ifSome((active) => active.stepIn())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.stepOut", () =>
+        vscode.commands.registerCommand("file-browser-fixed.stepOut", () =>
             active.ifSome((active) => active.stepOut())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.actions", () =>
+        vscode.commands.registerCommand("file-browser-fixed.actions", () =>
             active.ifSome((active) => active.actions())
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.tabNext", () =>
+        vscode.commands.registerCommand("file-browser-fixed.tabNext", () =>
             active.ifSome((active) => active.tabCompletion(true))
         )
     );
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser.tabPrev", () =>
+        vscode.commands.registerCommand("file-browser-fixed.tabPrev", () =>
             active.ifSome((active) => active.tabCompletion(false))
         )
     );
