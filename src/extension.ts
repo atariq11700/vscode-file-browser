@@ -233,7 +233,34 @@ class FileBrowser {
             this.file = this.path.pop();
             await this.update();
         } else {
-            
+
+            if (OS.platform() === "win32") {
+                this.current.enabled = false;
+                this.current.show();
+                this.current.busy = true;
+                this.current.title = "Drive Selector";
+                this.current.value = "";
+
+                let drives: string[] = [];
+                await (await list()).forEach((drive) => {
+                    drive.mountpoints.forEach((mount) => {
+                        drives.push(mount.path);
+                    })
+                })
+
+                let items = drives.map((drive_path) => {
+                    return new FileItem([drive_path, FileType.Directory])
+                })
+
+                this.items = items;
+                this.current.items = items;
+
+                this.current.enabled = true;
+
+
+                // console.log("Drives", drives)
+            }
+
         }
     }
 
