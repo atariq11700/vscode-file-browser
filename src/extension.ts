@@ -257,6 +257,10 @@ class FileBrowser {
 
                 this.current.enabled = true;
 
+                this.path = new Path(
+                    vscode.Uri.file("")
+                )
+
 
                 // console.log("Drives", drives)
             }
