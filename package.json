@@ -6,8 +6,7 @@
     "version": "0.2.14",
     "license": "LGPL-3.0+",
     "author": {
-        "name": "Bodil Stokke",
-        "url": "https://bodil.lol/"
+        "name": "Adam A"
     },
     "repository": {
         "type": "git",
@@ -15,7 +14,8 @@
     },
     "keywords": [
         "emacs",
-        "helm"
+        "helm",
+        "file browser"
     ],
     "icon": "images/icon.png",
     "engines": {
