@@ -20,7 +20,7 @@ export enum ConfigItem {
 }
 
 export function config<A>(item: ConfigItem): A | undefined {
-    return vscode.workspace.getConfiguration("quick-file-browser").get(item);
+    return vscode.workspace.getConfiguration("file-browser-fixed").get(item);
 }
 
 let active: Option<FileBrowser> = None;
