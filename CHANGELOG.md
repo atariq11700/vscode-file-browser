@@ -6,6 +6,12 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+## [0.2.12]
+
+### ADDED
+
+-   Added the ability to browse between logical drives on windows machines
+
 
 ## [0.2.11]
 
