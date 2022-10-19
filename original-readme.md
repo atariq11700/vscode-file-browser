@@ -1,7 +1,7 @@
 # File Browser
 
 An integrated, keyboard driven file selector for VS Code, inspired by Emacs's
-[Helm](https://emacs-helm.github.io/helm/) file selector. Originally written by Bodil Stokke, forked and expanded on by [me](https://github.com/atariq11700)
+[Helm](https://emacs-helm.github.io/helm/) file selector.
 
 ![screenshot](images/file-browser.gif)
 
@@ -20,14 +20,9 @@ This is what this extension gives you:
 -   Perform file operations like rename and delete by stepping into a file with the right arrow key,
     or by hitting `Ctrl+A` on any file or folder.
 
--   Navigate between files and folders on different drive for windows machines
-
-## Features Todo  
-
--   Add the ability to open a file in your editor of choice
--   Add support to open notebook files as notebooks or text files
-
 ## Licence
+
+Copyright 2020 Bodil Stokke
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU
 Lesser General Public License as published by the Free Software Foundation, either version 3 of the
@@ -40,7 +35,9 @@ General Public License for more details.
 You should have received a copy of the GNU Lesser General Public License along with this program. If
 not, see <https://www.gnu.org/licenses/>.
 
-## Original Repository and Readme
-[Original Repository](https://github.com/bodil/vscode-file-browser)  
-[Original Readme](original-readme.md)
+## Code of Conduct
 
+Please note that this project is released with a [Contributor Code of Conduct][coc]. By
+participating in this project you agree to abide by its terms.
+
+[coc]: https://github.com/bodil/vscode-file-browser/blob/master/CODE_OF_CONDUCT.md
