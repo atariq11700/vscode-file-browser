@@ -276,9 +276,6 @@ class FileBrowser {
                     vscode.Uri.file("")
                 );
                 this.pathHistory = { [this.path.id]: this.file };
-
-
-                // console.log("Drives", drives)
             }
 
         }
@@ -478,7 +475,7 @@ export function activate(context: vscode.ExtensionContext) {
     setContext(false);
 
     context.subscriptions.push(
-        vscode.commands.registerCommand("file-browser-fixed.open", () => {
+        vscode.commands.registerCommand("file-browser-fixed.open", async () => {
             const document = vscode.window.activeTextEditor?.document;
             let workspaceFolder =
                 vscode.workspace.workspaceFolders && vscode.workspace.workspaceFolders[0];
