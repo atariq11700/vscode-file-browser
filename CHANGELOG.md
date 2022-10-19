@@ -6,6 +6,21 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+## [0.2.13]
+
+### ADDED
+
+-   Added fixes from [jeffgran's fork](https://github.com/jeffgran/vscode-quick-file-browser)
+-   #### CHANGED
+    -   Add new config item `quick-file-browser.uriSchemeUriCommandMap` to allow using a custom command to find the starting URI for weird virtual file schemes.  
+-   #### CHANGED
+    -   Bugfix: create new file action didn't work because path was wrong.
+-   #### CHANGED
+    -   Renamed extension to `quick-file-browser` for republishing new versions.
+    -   Activate on StartupFinished.
+    -   Removed the 'open as new file' inline command at the top of the results. This was annoying and was forcing the user to type the full name of file/folder.
+    -   Moved the 'open as new file' inline command to under the action menu.
+
 ## [0.2.12]
 
 ### ADDED
@@ -18,7 +33,7 @@ file.
 ### CHANGED
 
 -   While loading the file list, show a 'busy' animation untill the files are ready to be shown.
-    
+
 ## [0.2.10]
 
 ### CHANGED
