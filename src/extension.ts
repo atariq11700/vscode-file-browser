@@ -20,7 +20,7 @@ export enum ConfigItem {
 }
 
 export function config<A>(item: ConfigItem): A | undefined {
-    return vscode.workspace.getConfiguration("quick-file-browser").get(item);
+    return vscode.workspace.getConfiguration("file-browser-fixed").get(item);
 }
 
 let active: Option<FileBrowser> = None;
@@ -95,7 +95,8 @@ class FileBrowser {
     }
 
     async update() {
-        this.current.enabled = false;
+        //bug: for some reason, with the october 2022 update, disabling the quick pick combined with the async await on line 107 causes the vscode to defocus the quickpick but still render it.
+        // this.current.enabled = false; //commented out untill i figure out a proper fix or vscode fixes this issue with their api
         this.current.show();
         this.current.busy = true;
         this.current.title = this.path.fsPath;
@@ -103,6 +104,7 @@ class FileBrowser {
             this.current.value = "";
         }
 
+        //conflicting await with the quick pick disable ^^ as of october 2022 update. idk why
         const stat = (await Result.try(vscode.workspace.fs.stat(this.path.uri))).unwrap();
         if (stat && this.inActions && (stat.type & FileType.File) === FileType.File) {
             const selectedFile = new Path(this.path.uri).pop().unwrap();

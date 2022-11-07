@@ -6,6 +6,14 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+
+## [0.2.14]
+
+### FIXED
+
+-   Fixed not being able to type or move selection up and down on open without reclicking on the input box due to vscode api update.
+-   The fix results in the user being able to input while the quickpick is still getting file info, its a temporary fix for now
+
 ## [0.2.13]
 
 ### ADDED
