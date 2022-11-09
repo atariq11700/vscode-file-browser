@@ -6,6 +6,11 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+## [0.2.15]
+
+### FIXED
+
+-   Fixed the file list not populating when opening a notebook.
 
 ## [0.2.14]
 
