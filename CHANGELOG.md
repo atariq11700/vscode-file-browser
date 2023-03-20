@@ -11,6 +11,7 @@ file.
 ### FIXED
 
 -   Fixed the file list not populating when opening a notebook.
+-   Fixed the extension not loading on non-windows os's due to incompatible dependencies
 
 ## [0.2.14]
 
