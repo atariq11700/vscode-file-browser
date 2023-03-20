@@ -22,6 +22,10 @@ This is what this extension gives you:
 
 -   Navigate between files and folders on different drive for windows machines
 
+## Notes
+
+-   This should work with linux. If you are having issues, make sure you have nodejs >= 16, udev installed and util-linux installed.
+
 ## Features Todo  
 
 -   Add the ability to open a file in your editor of choice
