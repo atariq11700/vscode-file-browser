@@ -105,7 +105,8 @@ class FileBrowser {
         }
 
         //conflicting await with the quick pick disable ^^ as of october 2022 update. idk why
-        const stat = (await Result.try(vscode.workspace.fs.stat(this.path.uri))).unwrap();
+        const fileUri = vscode.Uri.file(this.path.fsPath);
+        const stat = (await Result.try(vscode.workspace.fs.stat(fileUri))).unwrap();
         if (stat && this.inActions && (stat.type & FileType.File) === FileType.File) {
             const selectedFile = new Path(this.path.uri).pop().unwrap();
             this.items = [];
@@ -147,7 +148,7 @@ class FileBrowser {
             ]);
             this.current.items = this.items;
         } else if (stat && (stat.type & FileType.Directory) === FileType.Directory) {
-            const records = await vscode.workspace.fs.readDirectory(this.path.uri);
+            const records = await vscode.workspace.fs.readDirectory(fileUri);
             records.sort(fileRecordCompare);
             let items = records.map((entry) => new FileItem(entry));
             if (config(ConfigItem.HideIgnoreFiles)) {

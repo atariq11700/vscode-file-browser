@@ -4,3 +4,4 @@ node_modules/
 *.vsix
 docs/
 package-lock.json
+*.lock
