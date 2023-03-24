@@ -9,6 +9,7 @@ import { Path, endsWithPathSeparator } from "./path";
 import { Rules } from "./filter";
 import { FileItem, fileRecordCompare } from "./fileitem";
 import { action, Action } from "./action";
+import { assert } from "console";
 
 export enum ConfigItem {
     RemoveIgnoredFiles = "removeIgnoredFiles",
@@ -354,9 +355,19 @@ class FileBrowser {
 
     openFile(uri: Uri, column: ViewColumn = ViewColumn.Active) {
         this.dispose();
-        vscode.workspace
-            .openTextDocument(uri)
-            .then((doc) => vscode.window.showTextDocument(doc, column));
+        const new_uri = vscode.Uri.file(uri.fsPath);
+        assert(new_uri.scheme === "file" && new_uri.fragment === "")
+
+        if (new_uri.fsPath.endsWith(".ipynb")) {
+            vscode.workspace.openNotebookDocument(new_uri).then((doc) => {
+                vscode.window.showNotebookDocument(doc)
+            })
+        } else {
+            vscode.workspace.openTextDocument(new_uri).then((doc) => {
+                vscode.window.showTextDocument(doc, column)
+            })
+        }
+            
     }
 
     async runAction(item: FileItem) {
