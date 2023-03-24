@@ -6,6 +6,24 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+## [0.2.17]
+
+### ADDED
+
+- Notebooks now open in the notebook editor
+    - This only gets checked against notebooks ending with .ipynb
+
+### FIXED
+
+- Opening notebooks from a text editor and opening a text file from a notebook editor now works
+
+## [0.2.16]
+
+### CHANGED
+
+-   Added a linux and windows specific build to the marketplace
+    -   The windows build is the fallback build, the linux build will only be installed on linux-x64 machines 
+
 ## [0.2.15]
 
 ### FIXED
