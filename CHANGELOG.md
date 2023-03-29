@@ -6,16 +6,22 @@ All notable changes to the "file-browser" extension will be documented in this f
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this
 file.
 
+## [0.2.20]
+
+### FIXED*
+
+-   Hopefully fixed workarounds for vscode not install the right version base on architecture
+
 ## [0.2.17]
 
 ### ADDED
 
-- Notebooks now open in the notebook editor
-    - This only gets checked against notebooks ending with .ipynb
+-   Notebooks now open in the notebook editor
+    -   This only gets checked against notebooks ending with .ipynb
 
 ### FIXED
 
-- Opening notebooks from a text editor and opening a text file from a notebook editor now works
+-   Opening notebooks from a text editor and opening a text file from a notebook editor now works
 
 ## [0.2.16]
 
