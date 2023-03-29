@@ -1,5 +1,25 @@
 # File Browser
 
+# ***INSTALLATION NOTES***  
+If you are on linux, 32bit or 64bit or are using wsl or ssh, vscode for some reason does not download the correct version. There are windows builds, and linux builds because of binary dependencies, and vscode will just download the windows version. IDK why. The check which version is installed, there are 2 ways. You can either navigate to where you extensions are installed, and make sure that linux is at the end of the extension folder name, or if it deoesnt open, toggle dev tools and reload. If there is an error that states something like "Invalid ELF header" then it installed the windows version.
+
+
+Fixes:  
+* If using remotes(wsl/ssh)
+    * Install the extension both locally and on the remote
+    * In the extension tab, navigate to the extensions installed on the remote
+    * Click the dropdown next to uninstall and click install a different version
+    * Select an older version, reload, then repeat the steps with the newer version
+    * Or install the vsix direct from the github release page [here](https://github.com/atariq11700/vscode-file-browser/releases)
+* If using native linux
+    * This should hopefully work better than when using a remote
+    * If it doesnt try ^
+    * Otherwise install the vsix from the github release page [here](https://github.com/atariq11700/vscode-file-browser/releases)
+
+
+
+## About
+
 An integrated, keyboard driven file selector for VS Code, inspired by Emacs's
 [Helm](https://emacs-helm.github.io/helm/) file selector. Originally written by Bodil Stokke, forked and expanded on by [me](https://github.com/atariq11700)
 
